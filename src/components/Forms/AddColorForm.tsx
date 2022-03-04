@@ -97,11 +97,11 @@ const AddColorForm: React.FC<{onAddHex: (hex: string) => void, onAddRgb: (r: num
                 { !hexForm &&
                 <div className={`${classes.inputContainer} ${classes.inputRgbContainer}`}>
                     <label htmlFor='colorRed'>R</label>
-                    <input type='number' id='colorRed' ref={inputRedColorRef} value={inputRedColorValue} onChange={redValidatorHandler}/>
+                    <input type='tel' id='colorRed' ref={inputRedColorRef} value={inputRedColorValue} onChange={redValidatorHandler}/>
                     <label htmlFor='colorGreen'>G</label>
-                    <input type='number' id='colorGreen' ref={inputGreenColorRef} value={inputGreenColorValue} onChange={greenValidatorHandler} />
+                    <input type='tel' id='colorGreen' ref={inputGreenColorRef} value={inputGreenColorValue} onChange={greenValidatorHandler} />
                     <label htmlFor='color'>B</label>
-                    <input type='number' id='colorGreen' ref={inputBlueColorRef} value={inputBlueColorValue} onChange={blueValidatorHandler} />
+                    <input type='tel' id='colorGreen' ref={inputBlueColorRef} value={inputBlueColorValue} onChange={blueValidatorHandler} />
                     <input type="button" onClick={changeColorFormHandler} className={classes.colorFormButton} value={colorFormText} />
                 </div>
                 }
