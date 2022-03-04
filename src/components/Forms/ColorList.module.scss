@@ -1,0 +1,14 @@
+.colorList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1rem;
+    width: 350px;
+    overflow-y: auto;
+    height: 200px;
+}
+
+@media only screen and (max-width: 400px) {
+    .colorList {
+        width: 95%;
+    }
+}

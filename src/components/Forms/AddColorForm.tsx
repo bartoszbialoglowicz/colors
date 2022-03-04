@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react"
 import Card from "../UI/Card";
 
-import classes from './AddColorForm.module.css';
+import classes from './AddColorForm.module.scss';
 
 const AddColorForm: React.FC<{onAddHex: (hex: string) => void, onAddRgb: (r: number, g: number, b: number) => void}> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null);

@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import classes from './ColorFilterForm.module.css';
+import classes from './ColorFilterForm.module.scss';
 
 const ColorFilterForm: React.FC<{rFilter: () => void, gFilter: () => void, bFilter: () => void, filterState: boolean[]}> = (props) => {
     const rInputClasses = props.filterState[0] ? `${classes.filterButtonRed} ${classes.filterActive}` : classes.filterButtonRed;

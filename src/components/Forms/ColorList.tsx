@@ -1,7 +1,8 @@
 import Color from "../../models/color";
 import Card from "../UI/Card";
 
-import classes from './ColorList.module.css';
+import classes from './ColorList.module.scss';
+import ColorListItem from "./ColorListItem";
 
 const ColorList: React.FC<{colors: Color[], onRemove: (hexVal: string) => void}> = (props) => {
 
@@ -13,14 +14,7 @@ const ColorList: React.FC<{colors: Color[], onRemove: (hexVal: string) => void}>
     })
     .map(color => {
         const text = `${color.hexValue} rgb(${color.redValue},${color.greenValue},${color.blueValue})`
-        return <li key={color.hexValue}>
-            <div className={classes.itemListItem}>
-                <div className={classes.itemColor}>
-                </div>
-                <p>{text}</p>
-            </div>
-            {!color.baseColor && <div onClick={props.onRemove.bind(null, color.hexValue)} className={classes.removeItem}>X</div>}
-        </li>
+        return <ColorListItem key={color.hexValue} hexValue={color.hexValue} text={text} baseColor={color.baseColor} onRemove={props.onRemove}/>
     });
 
 

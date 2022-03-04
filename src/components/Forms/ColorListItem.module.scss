@@ -1,13 +1,4 @@
-.colorList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0 1rem;
-    width: 350px;
-    overflow-y: auto;
-    height: 200px;
-}
-
-.colorList > li {
+li {
     display: flex;
     justify-content: space-between;
     height: 30px;
@@ -15,12 +6,12 @@
     margin: 0.2rem 0;
 }
 
-.itemListItem {
-    width: 80%;
+li > div > p {
+    margin: 0;
 }
 
-.colorList > li > div > p {
-    margin: 0;
+.itemListItem {
+    width: 80%;
 }
 
 .removeItem {
@@ -31,16 +22,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .2s;
     cursor: pointer;
-}
+} .removeItem:hover {
+      background-color: #444;
+  }
 
 .itemColor {
     height: 5px;
     background-color: red;
-}
-
-@media only screen and (max-width: 400px) {
-    .colorList {
-        width: 95%;
-    }
 }

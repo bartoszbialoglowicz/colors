@@ -21,23 +21,27 @@
     border: none;
     color: #fff;
     transition: .2s;
+    outline: none;
 }
 
 .filterButtonRed {
     background-color: #b84242;
-} .filterButtonRed:hover {
+} .filterButtonRed:hover,
+  .filterButtonRed:focus {
     background-color: #962020;
 }
 
 .filterButtonGreen {
     background-color: #41ad41;
-} .filterButtonGreen:hover {
+} .filterButtonGreen:hover, 
+  .filterButtonGreen:focus {
     background-color: #208b20;
 }
 
 .filterButtonBlue {
     background-color: #4747b6;
-} .filterButtonBlue:hover {
+} .filterButtonBlue:hover, 
+  .filterButtonBlue:focus {
     background-color: #252594;
 }
 
