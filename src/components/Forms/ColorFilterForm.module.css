@@ -1,0 +1,42 @@
+.filterForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filterForm > div > input {
+    padding: 0.5rem;
+    font-size: 18px;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.filterForm > h3 {
+    width: 100%;
+    text-align: center;
+    margin: 1rem;
+}
+
+.filterForm input {
+    border: none;
+    color: #fff;
+    transition: .2s;
+}
+
+.filterButtonRed {
+    background-color: #b84242;
+} .filterButtonRed:hover {
+    background-color: #962020;
+}
+
+.filterButtonGreen {
+    background-color: #41ad41;
+} .filterButtonGreen:hover {
+    background-color: #208b20;
+}
+
+.filterButtonBlue {
+    background-color: #4747b6;
+} .filterButtonBlue:hover {
+    background-color: #252594;
+}

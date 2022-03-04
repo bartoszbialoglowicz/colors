@@ -1,0 +1,71 @@
+.addFormContainer {
+    width: 100%;
+    height: 100px;
+}
+
+.addFormContainer > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.addFormContainer > form > div > input{
+    padding: 0.5rem;
+    margin: 0.2rem;
+    height: 100%;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputContainer > label {
+    display: flex;
+    align-items: center;
+}
+
+.inputRgbContainer > input {
+    width: 50px;
+}
+
+.colorFormButton {
+    height: 100%;
+    background-color: #eee;
+    border: 1px solid black;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.colorFormButton:hover {
+    background-color: #999;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 700px){
+    .submitInputContainer {
+        width: 100%;
+    } .submitInput {
+        width: 100%;
+    }
+
+    form {
+        flex-wrap: wrap;
+    }
+
+    .addFormContainer {
+        width: 80%;
+    }
+}

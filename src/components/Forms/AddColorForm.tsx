@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react"
+import Card from "../UI/Card";
+
+import classes from './AddColorForm.module.css';
 
 const AddColorForm: React.FC<{onAddHex: (hex: string) => void, onAddRgb: (r: number, g: number, b: number) => void}> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -82,27 +85,32 @@ const AddColorForm: React.FC<{onAddHex: (hex: string) => void, onAddRgb: (r: num
     const isButtonDisabled = !hexForm ? false : (inputValue.length === 4 || inputValue.length === 7) ? false : true;
 
     return (
-        <form onSubmit={onSubmitHandler}>
-            { hexForm &&
-            <div>
-                <label htmlFor='color'>Enter a color</label>
-                <input type='text' id='color' ref={inputRef} value={inputValue} onChange={hexValidatorHandler}/>
-            </div> }
-            { !hexForm &&
-            <div>
-                <label htmlFor='colorRed'>R</label>
-                <input type='number' id='colorRed' ref={inputRedColorRef} value={inputRedColorValue} onChange={redValidatorHandler}/>
-                <label htmlFor='colorGreen'>G</label>
-                <input type='number' id='colorGreen' ref={inputGreenColorRef} value={inputGreenColorValue} onChange={blueValidatorHandler}/>
-                <label htmlFor='color'>B</label>
-                <input type='number' id='colorGreen' ref={inputBlueColorRef} value={inputBlueColorValue} onChange={greenValidatorHandler}/>
-            </div>
-            }
-            <div onClick={changeColorFormHandler}>{colorFormText}</div>
-            <div>
-                <input type='submit' value='ADD COLOR' disabled={isButtonDisabled}/>
-            </div>
-        </form>
+        <Card>
+            <div className={classes.addFormContainer}>
+                <form onSubmit={onSubmitHandler}>
+                { hexForm &&
+                <div className={classes.inputContainer}>
+                    <label htmlFor='color'>HEX</label>
+                    <input type='text' id='color' ref={inputRef} value={inputValue} onChange={hexValidatorHandler}/>
+                    <input type="button" onClick={changeColorFormHandler} className={classes.colorFormButton} value={colorFormText} />
+                </div> }
+                { !hexForm &&
+                <div className={`${classes.inputContainer} ${classes.inputRgbContainer}`}>
+                    <label htmlFor='colorRed'>R</label>
+                    <input type='number' id='colorRed' ref={inputRedColorRef} value={inputRedColorValue} onChange={redValidatorHandler}/>
+                    <label htmlFor='colorGreen'>G</label>
+                    <input type='number' id='colorGreen' ref={inputGreenColorRef} value={inputGreenColorValue} onChange={greenValidatorHandler} />
+                    <label htmlFor='color'>B</label>
+                    <input type='number' id='colorGreen' ref={inputBlueColorRef} value={inputBlueColorValue} onChange={blueValidatorHandler} />
+                    <input type="button" onClick={changeColorFormHandler} className={classes.colorFormButton} value={colorFormText} />
+                </div>
+                }
+                <div className={classes.submitInputContainer}>
+                    <input type='submit' value='ADD COLOR' disabled={isButtonDisabled} className={classes.submitInput}/>
+                </div>
+            </form>
+        </div>
+        </Card> 
     )
 };
 
