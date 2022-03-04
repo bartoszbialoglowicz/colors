@@ -1,0 +1,46 @@
+.colorList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1rem;
+    width: 350px;
+    overflow-y: auto;
+    height: 200px;
+}
+
+.colorList > li {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+    margin: 0.2rem 0;
+}
+
+.itemListItem {
+    width: 80%;
+}
+
+.colorList > li > div > p {
+    margin: 0;
+}
+
+.removeItem {
+    background-color: #222;
+    color: #eee;
+    font-size: 14px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.itemColor {
+    height: 5px;
+    background-color: red;
+}
+
+@media only screen and (max-width: 400px) {
+    .colorList {
+        width: 95%;
+    }
+}
