@@ -51,7 +51,7 @@ const App: React.FC = () => {
   const addRgbColorHandler = (red: number, green: number, blue: number) => {
     const redV = red.toString(16).length < 2 ? '0'+red.toString(16) : red.toString(16);
     const greenV = green.toString(16).length < 2 ? '0'+green.toString(16) : green.toString(16);;
-    const blueV = blue.toString(16).length < 2 ? '0'+green.toString(16) : green.toString(16);;
+    const blueV = blue.toString(16).length < 2 ? '0'+blue.toString(16) : blue.toString(16);;
     const hexVal = `#${redV}${greenV}${blueV}`;
     const newColor = new Color(hexVal, red, green, blue, false);
     if (!isInArr(newColor)) {
@@ -114,7 +114,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <AddColorForm onAddHex={addHexColorHandler} onAddRgb={addRgbColorHandler}/>
-      <ColorFilterForm rFilter={redFilterHandler} gFilter={greenFilterHandler} bFilter={blueFilterHandler}/>
+      <ColorFilterForm rFilter={redFilterHandler} gFilter={greenFilterHandler} bFilter={blueFilterHandler} filterState={filters}/>
       <ColorList colors={filteredColors} onRemove={removeColorHandler}/>
     </div>
   );
