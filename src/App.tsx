@@ -5,7 +5,7 @@ import ColorFilterForm from './components/Forms/ColorFilterForm';
 import ColorList from './components/Forms/ColorList';
 import Color from './models/color';
 
-const App = () => {
+const App: React.FC = () => {
   const [colors, setColors] = useState<Color[]>([]);
   const [filteredColors, setFilteredColors] = useState<Color[]>([]);
   const [filters, setFilters] = useState<boolean[]>([false, false, false]);
